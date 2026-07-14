@@ -1,4 +1,4 @@
-# FinTech Innovations — Credit Risk ML Pipeline
+# FinTech Innovations Credit Risk ML Pipeline
 
 > **Building a Data-Driven Credit Risk Pipeline for Modern Banking**
 
