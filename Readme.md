@@ -219,7 +219,7 @@ Top 10 predictors from the tuned Gradient Boosting model:
 | 9 | `LoanAmount` | 0.0198 |
 | 10 | `CreditScore` | 0.0195 |
 
-Top predictors are financial health indicators — `DebtToIncomeRatio`, `MonthlyIncome`, `NetWorth`, and `CreditScore` — which aligns with domain intuition and provides loan officers with explainable signals for borderline cases.
+Top predictors are financial health indicators: `DebtToIncomeRatio`, `MonthlyIncome`, `NetWorth`, and `CreditScore`, which aligns with domain intuition and provides loan officers with explainable signals for borderline cases.
 
 ---
 
