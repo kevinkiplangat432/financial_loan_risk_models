@@ -37,7 +37,7 @@ FinTech Innovations' manual loan review process has three critical failure modes
 
 | Failure Mode | Description |
 |---|---|
-| **Inconsistency** | Two officers reviewing the same application may reach different decisions — outcomes depend on *who* reviews the file, not just creditworthiness |
+| **Inconsistency** | Two officers reviewing the same application may reach different decisions, outcomes depend on *who* reviews the file, not just creditworthiness |
 | **Speed** | Manual review creates processing bottlenecks that delay responses, damaging customer experience and competitive positioning |
 | **Blind spots** | Human reviewers may overlook complex multivariate signals (e.g., moderate credit score + exceptional payment history + low utilization = low-risk applicant) |
 
@@ -108,7 +108,7 @@ The **6.25:1 cost ratio** means approving one bad loan costs as much as wrongly 
 | Class imbalance: 76.1% denied | `class_weight='balanced'`; evaluated with PR-AUC |
 | Right-skewed financials (`NetWorth`, `TotalAssets`, etc.) | `StandardScaler` in pipeline |
 
-> **Note on `EducationLevel` missingness:** Approval rate drops to **0%** for records with missing `EducationLevel`, compared to 25.03% for records where it is present — a strong signal that warrants a missing indicator feature.
+**Note on `EducationLevel` missingness:** Approval rate drops to **0%** for records with missing `EducationLevel`, compared to 25.03% for records where it is present, a strong signal that warrants a missing indicator feature.
 
 ---
 
@@ -153,7 +153,7 @@ Transformed shape: **(16,000 × 46)** — no remaining NaN values.
 | Gradient Boosting | 0.9573 | 0.0059 | 0.8496 | 0.0102 |
 | Random Forest | 0.9301 | 0.0110 | 0.7772 | 0.0220 |
 
-> Logistic Regression was surprisingly competitive, suggesting the feature-approval relationship is largely linear. **Gradient Boosting** was selected as the final model for its stronger recall and better handling of non-linear interactions after tuning.
+Logistic Regression was surprisingly competitive, suggesting the feature-approval relationship is largely linear. **Gradient Boosting** was selected as the final model for its stronger recall and better handling of non-linear interactions after tuning.
 
 ### Hyperparameter Tuning (Gradient Boosting)
 
@@ -245,7 +245,7 @@ False positives drive the majority of cost ($3.4M of $4.1M total), consistent wi
 
 2. **Adjust the classification threshold.** The default 0.5 threshold can be raised to reduce the 68 false positives (each costing $50,000). Thresholds of 0.6–0.7 should be evaluated against the resulting increase in false negatives.
 
-3. **Monitor for model drift.** Retrain quarterly as economic conditions shift. The 68 false positives in this test set represent $3.4M in potential defaults — even small drift in production warrants immediate attention.
+3. **Monitor for model drift.** Retrain quarterly as economic conditions shift. The 68 false positives in this test set represent $3.4M in potential defaults, even small drift in production warrants immediate attention.
 
 ---
 
